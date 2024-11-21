@@ -24,6 +24,10 @@ int main(void)
 	//player sprite
 	//SDL_Surface *surface = SDL_LoadBMP("C:\\Users\\conta\\Desktop\\Programação\\faculdade\\GTIC\\goofy.bmp");
 	SDL_Surface *surface = SDL_LoadBMP("goofy.bmp");
+
+	Uint32 colorkey = SDL_MapRGB (surface -> format, 255, 255, 255);
+	SDL_SetColorKey(surface, SDL_TRUE, colorkey);
+
 	SDL_Texture *texture = SDL_CreateTextureFromSurface(mainRenderer, surface);
 	
 
@@ -87,7 +91,7 @@ int main(void)
 		if (playerPos.x < 153) playerPos.x = 153;
 		if (playerPos.x > 821) playerPos.x = 821;
 		if (playerPos.y > 622) playerPos.y = 622;
-		if (playerPos.y < 128) playerPos.y = 128;		
+		if (playerPos.y < 70) playerPos.y = 70;		
 		
 		SDL_SetRenderDrawColor(mainRenderer, 20, 20, 20, 255);
 		SDL_RenderCopy(mainRenderer, bgTexture, NULL, 0);
